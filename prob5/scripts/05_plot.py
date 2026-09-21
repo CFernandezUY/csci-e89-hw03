@@ -1,0 +1,17 @@
+# This is notebook step 5. Run the steps in numeric order in one Python session, or run run_image_classifier.py for a standalone program.
+
+epoch_numbers = range(1, EPOCHS + 1)
+fig, (accuracy_ax, loss_ax) = plt.subplots(1, 2, figsize=(12, 4.5))
+accuracy_ax.plot(epoch_numbers, history["train_accuracy"], marker="o", label="Training")
+accuracy_ax.plot(epoch_numbers, history["validation_accuracy"], marker="o", label="Validation")
+accuracy_ax.set(title="Accuracy", xlabel="Epoch", ylabel="Accuracy", xticks=list(epoch_numbers))
+accuracy_ax.legend()
+accuracy_ax.grid(alpha=0.3)
+loss_ax.plot(epoch_numbers, history["train_loss"], marker="o", label="Training")
+loss_ax.plot(epoch_numbers, history["validation_loss"], marker="o", label="Validation")
+loss_ax.set(title="Cross-entropy loss", xlabel="Epoch", ylabel="Loss", xticks=list(epoch_numbers))
+loss_ax.legend()
+loss_ax.grid(alpha=0.3)
+fig.tight_layout()
+fig.savefig(CURVES_PATH, dpi=150, bbox_inches="tight")
+plt.show()
