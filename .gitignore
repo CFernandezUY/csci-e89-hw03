@@ -1,5 +1,8 @@
 prob1/data/
 prob3/data/
+data/
+datasets/
 __pycache__/
+.ipynb_checkpoints/
 *.pyc
 *.pt
